@@ -1,0 +1,506 @@
+/* Unique Seller Dashboard Styles - CandidateHome.css */
+
+.seller-dashboard-loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  background: var(--background-light, #f8f9fa);
+}
+
+.seller-dashboard-loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 1rem;
+}
+
+.seller-dashboard-loading-text {
+  color: var(--text-secondary, #6c757d);
+  font-size: 1.1rem;
+}
+
+/* Seller Hero Section */
+.seller-dashboard-hero {
+  background: linear-gradient(135deg, var(--primary-color, #007bff) 0%, var(--secondary-color, #6f42c1) 100%);
+  color: white;
+  padding: 4rem 0;
+  margin-bottom: 2rem;
+}
+
+.seller-dashboard-hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.seller-dashboard-hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.seller-dashboard-hero-actions .btn {
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  border-radius: var(--border-radius, 8px);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.seller-dashboard-hero-actions .btn-primary {
+  background: white;
+  color: var(--primary-color, #007bff);
+  border: 2px solid white;
+}
+
+.seller-dashboard-hero-actions .btn-primary:hover {
+  background: transparent;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.seller-dashboard-hero-actions .btn-outline-primary {
+  border: 2px solid white;
+  color: white;
+}
+
+.seller-dashboard-hero-actions .btn-outline-primary:hover {
+  background: white;
+  color: var(--primary-color, #007bff);
+  transform: translateY(-2px);
+}
+
+.seller-dashboard-avatar-large {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin: 0 auto;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Dashboard Container */
+.seller-dashboard-main-container {
+  padding: 2rem 0;
+}
+
+/* Statistics Cards */
+.seller-dashboard-stats-row {
+  margin-bottom: 2rem;
+}
+
+.seller-dashboard-stat-card {
+  border: none;
+  border-radius: var(--border-radius, 12px);
+  box-shadow: var(--shadow-light, 0 2px 10px rgba(0,0,0,0.1));
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.seller-dashboard-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium, 0 8px 25px rgba(0,0,0,0.15));
+}
+
+.seller-dashboard-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-color, #007bff);
+}
+
+.seller-dashboard-stat-card.properties::before { background: var(--success-color, #28a745); }
+.seller-dashboard-stat-card.active::before { background: var(--info-color, #17a2b8); }
+.seller-dashboard-stat-card.tours::before { background: var(--warning-color, #ffc107); }
+.seller-dashboard-stat-card.offers::before { background: var(--primary-color, #007bff); }
+.seller-dashboard-stat-card.views::before { background: var(--secondary-color, #6f42c1); }
+.seller-dashboard-stat-card.revenue::before { background: var(--success-color, #28a745); }
+
+.seller-dashboard-stat-content {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+}
+
+.seller-dashboard-stat-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  background: var(--background-light, #f8f9fa);
+  color: var(--primary-color, #007bff);
+}
+
+.seller-dashboard-stat-card.properties .seller-dashboard-stat-icon { 
+  background: rgba(40, 167, 69, 0.1); 
+  color: var(--success-color, #28a745); 
+}
+.seller-dashboard-stat-card.active .seller-dashboard-stat-icon { 
+  background: rgba(23, 162, 184, 0.1); 
+  color: var(--info-color, #17a2b8); 
+}
+.seller-dashboard-stat-card.tours .seller-dashboard-stat-icon { 
+  background: rgba(255, 193, 7, 0.1); 
+  color: var(--warning-color, #ffc107); 
+}
+.seller-dashboard-stat-card.offers .seller-dashboard-stat-icon { 
+  background: rgba(0, 123, 255, 0.1); 
+  color: var(--primary-color, #007bff); 
+}
+.seller-dashboard-stat-card.views .seller-dashboard-stat-icon { 
+  background: rgba(111, 66, 193, 0.1); 
+  color: var(--secondary-color, #6f42c1); 
+}
+.seller-dashboard-stat-card.revenue .seller-dashboard-stat-icon { 
+  background: rgba(40, 167, 69, 0.1); 
+  color: var(--success-color, #28a745); 
+}
+
+.seller-dashboard-stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary, #212529);
+}
+
+.seller-dashboard-stat-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #6c757d);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Dashboard Cards */
+.seller-dashboard-content-card {
+  border: none;
+  border-radius: var(--border-radius, 12px);
+  box-shadow: var(--shadow-light, 0 2px 10px rgba(0,0,0,0.1));
+  transition: all 0.3s ease;
+}
+
+.seller-dashboard-content-card:hover {
+  box-shadow: var(--shadow-medium, 0 8px 25px rgba(0,0,0,0.15));
+}
+
+.seller-dashboard-card-title {
+  color: var(--text-primary, #212529);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.seller-dashboard-card-title svg {
+  color: var(--primary-color, #007bff);
+}
+
+/* Quick Actions */
+.seller-dashboard-quick-action-btn {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  background: var(--background-light, #f8f9fa);
+  border-radius: var(--border-radius, 12px);
+  text-decoration: none;
+  color: var(--text-primary, #212529);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  height: 100%;
+}
+
+.seller-dashboard-quick-action-btn:hover {
+  background: var(--primary-color, #007bff);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-medium, 0 8px 25px rgba(0,0,0,0.15));
+  text-decoration: none;
+}
+
+.seller-dashboard-action-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: var(--primary-color, #007bff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.seller-dashboard-quick-action-btn:hover .seller-dashboard-action-icon {
+  background: white;
+  color: var(--primary-color, #007bff);
+}
+
+.seller-dashboard-action-content h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.seller-dashboard-action-content p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Activity Timeline */
+.seller-dashboard-activity-timeline {
+  position: relative;
+}
+
+.seller-dashboard-activity-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color, #e9ecef);
+  position: relative;
+}
+
+.seller-dashboard-activity-item:last-child {
+  border-bottom: none;
+}
+
+.seller-dashboard-activity-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-right: 1rem;
+  font-size: 0.9rem;
+}
+
+.seller-dashboard-activity-content {
+  flex: 1;
+}
+
+.seller-dashboard-activity-message {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  color: var(--text-primary, #212529);
+}
+
+.seller-dashboard-activity-time {
+  color: var(--text-secondary, #6c757d);
+  font-size: 0.85rem;
+}
+
+.seller-dashboard-activity-badge {
+  font-size: 0.75rem;
+  text-transform: capitalize;
+}
+
+/* Profile Card */
+.seller-dashboard-profile-card {
+  text-align: center;
+}
+
+.seller-dashboard-profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary-color, #007bff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0 auto;
+  border: 4px solid var(--background-light, #f8f9fa);
+}
+
+.seller-dashboard-profile-name {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary, #212529);
+  font-weight: 600;
+}
+
+.seller-dashboard-profile-email {
+  color: var(--text-secondary, #6c757d);
+  margin-bottom: 1.5rem;
+}
+
+.seller-dashboard-profile-details {
+  margin-bottom: 1.5rem;
+}
+
+.seller-dashboard-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary, #6c757d);
+  font-size: 0.9rem;
+}
+
+.seller-dashboard-detail-icon {
+  margin-right: 0.5rem;
+  color: var(--primary-color, #007bff);
+}
+
+.seller-dashboard-profile-completion {
+  margin-bottom: 1.5rem;
+}
+
+.seller-dashboard-completion-bar {
+  height: 8px;
+  background: var(--background-light, #f8f9fa);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.seller-dashboard-completion-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color, #007bff), var(--secondary-color, #6f42c1));
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.seller-dashboard-completion-text {
+  color: var(--text-secondary, #6c757d);
+  font-size: 0.85rem;
+}
+
+/* Performance Summary */
+.seller-dashboard-performance-item {
+  margin-bottom: 1.5rem;
+}
+
+.seller-dashboard-performance-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.seller-dashboard-performance-trend {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.seller-dashboard-performance-trend.positive {
+  color: var(--success-color, #28a745);
+}
+
+.seller-dashboard-performance-trend.negative {
+  color: var(--danger-color, #dc3545);
+}
+
+.seller-dashboard-performance-bar {
+  height: 6px;
+  background: var(--background-light, #f8f9fa);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.seller-dashboard-performance-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color, #007bff), var(--secondary-color, #6f42c1));
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+/* Welcome Modal */
+.seller-dashboard-welcome-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary-color, #007bff);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto;
+}
+
+.seller-dashboard-welcome-steps {
+  text-align: left;
+  margin: 1.5rem 0;
+}
+
+.seller-dashboard-welcome-steps li {
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary, #6c757d);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .seller-dashboard-hero-title {
+    font-size: 2rem;
+  }
+  
+  .seller-dashboard-hero-actions .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .seller-dashboard-avatar-large {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  .seller-dashboard-stat-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .seller-dashboard-stat-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .seller-dashboard-quick-action-btn {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .seller-dashboard-action-icon {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .seller-dashboard-hero {
+    padding: 2rem 0;
+  }
+  
+  .seller-dashboard-hero-title {
+    font-size: 1.75rem;
+  }
+  
+  .seller-dashboard-hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .seller-dashboard-main-container {
+    padding: 1rem 0;
+  }
+}

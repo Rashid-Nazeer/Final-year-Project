@@ -1,0 +1,315 @@
+:root {
+    /* User list specific variables */
+    --user-active-bg: rgba(11, 11, 69, 0.1);
+    --user-hover-bg: rgba(153, 108, 34, 0.1);
+    --user-border: rgba(11, 11, 69, 0.1);
+    --avatar-bg: var(--background_color);
+    --avatar-text: var(--color_white);
+    --search-bg: var(--color-gray);
+    --user-transition: all 0.3s ease;
+    
+    /* Role-specific colors */
+    --seller-color: #e74c3c;
+    --buyer-color: #3498db;
+    --agent-color: #2ecc71;
+}
+
+/* Container Styles */
+.users-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 180px); /* Match the chat window height */
+    max-height: calc(100vh - 180px); 
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: var(--chat-border-radius);
+    box-shadow: var(--chat-box-shadow);
+    margin-right: 1rem;
+}
+
+/* Search Container */
+.search-container {
+    position: relative;
+    margin-bottom: 1rem;
+    margin-top: 10px;
+}
+
+.search-input {
+    padding: 12px 35px 12px 15px;
+    border-radius: 8px;
+    background-color: var(--search-bg);
+    border: 1px solid var(--user-border);
+    transition: var(--user-transition);
+    font-size: 0.9rem;
+}
+
+.search-input:focus {
+    border-color: var(--color);
+    box-shadow: 0 0 0 0.2rem rgba(153, 108, 34, 0.25);
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+/* Role-based tabs */
+.user-role-tabs {
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--user-border);
+}
+
+.user-role-tabs .nav-link {
+    border: none;
+    color: #555;
+    font-size: 0.9rem;
+    padding: 8px 15px;
+    transition: var(--user-transition);
+    cursor: pointer;
+}
+
+.user-role-tabs .nav-link.active {
+    color: var(--color);
+    font-weight: 600;
+    border-bottom: 2px solid var(--color);
+    background-color: transparent;
+}
+
+/* User List */
+.user-list {
+    overflow-y: auto;
+    border-radius: 8px;
+    border: none;
+    height: calc(100% - 100px); /* Account for search box and tabs */
+    flex: 1;
+    animation: fadeIn 0.5s ease;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(153, 108, 34, 0.3) transparent;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(153, 108, 34, 0.3);
+    border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(153, 108, 34, 0.5);
+}
+
+/* User List Item */
+.user-list-item {
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    transition: var(--user-transition);
+    background-color: transparent;
+}
+
+.user-list-item:hover {
+    background-color: var(--user-hover-bg);
+    transform: translateX(3px);
+    border-color: var(--color);
+}
+
+.user-list-item.active-user {
+    background-color: var(--user-active-bg);
+    border-left: 3px solid var(--color);
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.user-item-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--avatar-bg);
+    color: var(--avatar-text);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-right: 12px;
+    transition: var(--user-transition);
+}
+
+.user-avatar-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 12px;
+    flex-shrink: 0;
+}
+
+.active-user .user-avatar {
+    background-color: var(--color);
+    transform: scale(1.05);
+}
+
+.user-info {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: 500;
+    margin-bottom: 3px;
+}
+
+.user-role {
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.user-role small {
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+}
+
+/* Role-specific styling */
+.user-list-item[data-role="Seller"] .user-role small,
+.user-list-item[data-role="seller"] .user-role small {
+    color: var(--seller-color);
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.user-list-item[data-role="Buyer"] .user-role small,
+.user-list-item[data-role="buyer"] .user-role small {
+    color: var(--buyer-color);
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.user-list-item[data-role="Agent"] .user-role small,
+.user-list-item[data-role="agent"] .user-role small {
+    color: var(--agent-color);
+    background-color: rgba(46, 204, 113, 0.1);
+}
+
+.user-status {
+    font-size: 0.75rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.status-indicator.online {
+    background-color: #28a745;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.status-indicator.offline {
+    background-color: #dc3545;
+}
+
+.unread-badge {
+    font-size: 0.7rem;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background_color) !important;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
+
+/* No Users State */
+.no-users {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    color: #666;
+    animation: fadeIn 0.5s ease;
+}
+
+.no-users i {
+    font-size: 3rem;
+    color: var(--color);
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.no-users p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.search-tip {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .user-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .user-list-item {
+        padding: 10px;
+    }
+}
